@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<!-- TemplateBeginEditable name="description" -->
+<meta name="description" content="SEO対策用の説明文を入れる" />
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Cafe Forest</title>
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" type="image/x-icon" href="../images/design/favicon.ico"/>
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/page.css" />
+<script src="../scripts/jquery-3.5.1.js"></script>	
+<script src="../scripts/hamburgerMenu.js"></script>
+<script src="scripts/upper.js"></script>
+<!-- TemplateBeginEditable name="css" -->
+<link rel="stylesheet" href="../styles/page/dummy_box.css" />
+<!-- TemplateEndEditable -->
+</head>
+<!-- TemplateBeginEditable name="body_Id" -->
+<body id="top">
+<!-- TemplateEndEditable -->
+<header>
+	<h1><a href="../index.htm"><span>Cafe Forest</span></a></h1>
+	<nav>
+		<h2>メニュー</h2>
+		<div>
+			<input id="my-parts-checkbox" class="my-parts-hidden" type="checkbox">
+			<label id="my-parts-icon" for="my-parts-checkbox"><span></span></label>
+		</div>
+		<ul>
+			<li id="navAbout"><a href="about.htm">About<br /><span>私たちのこだわり</span></a></li>
+			<li id="navSpecial"><a href="special.htm">Special<br /><span>今月のコーヒー&ケーキ</span></a></li>
+			<li id="navMenu"><a href="menu.htm">Menu<br /><span>メニュー</span></a></li>
+			<li id="navCoupon"><a href="coupon.htm">Coupon<br /><span>クーポン</span></a></li>
+			<li id="navShop"><a href="shop.htm">Shop<br /><span>販売</span></a></li>
+			<li id="navAccess"><a href="access.htm">Access<br /><span>アクセス</span></a></li>
+			<li id="navContact"><a href="contact.php">Contact<br /><span>お問い合わせ</span></a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<!-- TemplateBeginEditable name="main" -->
+	<section>
+		<div>
+			<h1>見出し１<span>サブタイトル</span></h1>
+			<p>本文本文本文本文本文本文本文本文本文本<br>文本文本文本文本文本文本文本文本文本文本文</p>
+			<h2>見出し２</h2>
+			<p>本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</p>
+			<h3>見出し３</h3>
+			<p>本文本文本文本文本文本文本文本文本文本文本<br>文本文本文本文本文本文本文本文本文本文</p>
+		</div>
+	</section>
+	<!-- TemplateEndEditable -->
+	<p class="upper" ><a href="#">▲</a></p>
+</main>
+<footer>
+	<p><img alt="サイトロゴ画像" loading="lazy" src="../images/design/logo_art.svg" /></p>
+	<ul>
+		<li><a href="index.htm">トップ</a></li>
+		<li><a href="privacy-policy.htm">プライバシー ポリシー</a></li>
+		<li><a href="transaction.htm">特定商取引法に基づく表記</a></li>
+		<li><a href="contact.php">お問い合わせ</a></li>
+		<li><a href="sitemap.htm">サイトマップ</a></li>
+	</ul>
+	<p><a href="https://www.instagram.com/"><img src ="../images/design/instagram.png" alt="instagram_icon"></a></p>
+	<p><small>Copyright 2020 Cafe Forest All Rights Reserved.</small></p>
+</footer>
+</body>
+</html>

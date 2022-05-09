@@ -1,0 +1,1896 @@
+﻿@charset "utf-8";
+/* page */
+/* --top----------------------------------------------------------------- */
+/* TOP共通設定  */
+body#top {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+body#top h2 {
+	text-align: center;
+}
+body#top h2 > span {
+	font-size: 1.25rem;
+}
+body#top h2 > span::before {
+	content: "　─ ";/*content: "\A─ " ;*//*white-space: pre ;*/
+}
+body#top h2 > span::after {
+	content: " ─";
+}
+body#top main > section {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+body#top main > section .whiteboard {
+	margin-top: 1.8em;
+}
+/* TOP画像エリア */
+body#top main > div:first-of-type {
+	position: relative;
+	width: var(--baseWidth);
+ height: calc(var(--baseWidth) * (7 / 16));
+	margin: 0;
+	/*margin-top:clamp(0px, ((100vw / 700) - (1280px / 700)) * 16, 1rem);*/
+	margin-top: 1rem;
+	margin-left: calc((var(--baseMainWidth) - var(--baseWidth)) / 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+body#top main > div > p {
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	font-size: 1.2em;
+	line-height: 3em;
+	color: var(--textWhite);
+	background-color: rgba(0,0,0,0.4);
+	text-shadow: 0px 0px 5px rgba(0,0,0,1);
+	animation : slideshow 24s linear infinite;
+}
+body#top main > div > p > span {
+	/*opacity: 0;*/
+	animation : slideshow 24s linear infinite;
+}
+/*
+body#top main > div > p > span:nth-of-type(1) {
+	animation :textFade1 24s linear infinite;
+}
+body#top main > div > p > span:nth-of-type(2) {
+	animation :textFade2 24s linear infinite;
+}
+body#top main > div > p > span:nth-of-type(3) {
+	animation :textFade3 24s linear infinite;
+}
+body#top main > div > p > span:nth-of-type(4) {
+	animation :textFade4 24s linear infinite;
+}
+*/
+body#top main > div > img {
+	position: absolute;
+	width: auto;
+	height: 60%;
+	z-index: 2;
+	opacity: 0;
+	animation : logoChenge 24s linear infinite;
+}
+body#top main > div > div::before {
+	content: "";
+	position: absolute;
+	top: 15%;
+	left: 30%;
+	width: 40%;
+	height: 70%;
+	z-index: 1;
+	opacity: 0;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: 0 0 30px 30px rgba(0,0,0,0.1);
+	animation : logoChenge 24s linear infinite;
+}
+body#top main > div > div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+body#top main > div > div > img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+body#top main > div > div > img:nth-of-type(1) {
+	animation : slideshow 24s linear infinite, zoomMove1 24s linear infinite;
+}
+body#top main > div > div > img:nth-of-type(2) {
+	animation : slideshow 24s linear 8s infinite, zoomMove2 24s linear 8s infinite;
+}
+body#top main > div > div > img:nth-of-type(3) {
+	animation : slideshow 24s linear 16s infinite, zoomMove3 24s linear 16s infinite;
+}
+@keyframes slideshow {
+ 0% {
+ opacity: 0;
+}
+ 10% {
+ opacity: 1;
+}
+ 25% {
+ opacity: 1
+}
+ 38% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+@keyframes logoChenge {
+ 0% {
+ opacity: 0;
+}
+ 35% {
+ opacity: 0
+}
+ 45% {
+ opacity: 1;
+}
+ 63% {
+ opacity: 1;
+}
+ 73% {
+ opacity: 0;
+}
+}
+@keyframes zoomMove1 {
+ 0% {
+ transform:scale(1.0) translate(0%, 0%);
+}
+ 38% {
+ transform:scale(1.1) translate(2.5%, 2.5%);
+}
+}
+@keyframes zoomMove2 {
+ 0% {
+ transform:scale(1.0) translate(0%, 0%);
+}
+ 38% {
+ transform:scale(1.1) translate(0%, -2.5%);
+}
+}
+@keyframes zoomMove3 {
+ 0% {
+ transform:scale(1.0) translate(0%, 0%);
+}
+ 38% {
+ transform:scale(1.1) translate(-2.5%, -2.5%);
+}
+}/*
+@keyframes textFade1{
+	0%{
+	  opacity: 0;
+	}
+	10%{
+	  opacity: 1;
+	}
+	25%{
+	  opacity: 1
+	}
+	38%{
+	  opacity: 0;
+	}
+	100%{
+	  opacity: 0;
+	}
+  }
+  @keyframes textFade2{
+	3%{
+	  opacity: 0;
+	}
+	13%{
+	  opacity: 1;
+	}
+	25%{
+	  opacity: 1
+	}
+	38%{
+	  opacity: 0;
+	}
+	100%{
+	  opacity: 0;
+	}
+  }
+  @keyframes textFade3{
+	6%{
+	  opacity: 0;
+	}	
+	16%{
+	  opacity: 1;
+	}
+	25%{
+	  opacity: 1
+	}
+	38%{
+	  opacity: 0;
+	}
+	100%{
+	  opacity: 0;
+	}
+  }
+  @keyframes textFade4{
+	9%{
+	  opacity: 0;
+	}
+	19%{
+	  opacity: 1;
+	}
+	25%{
+	  opacity: 1
+	}
+	38%{
+	  opacity: 0;
+	}
+	100%{
+	  opacity: 0;
+	}
+}*/
+/* News */
+body#top main > section:nth-of-type(1) {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+body#top main > section:nth-of-type(1) > h2 {
+	width: 100%;
+}
+body#top main > section:nth-of-type(1) > ul {
+	overflow-y: scroll;
+	width: 576px;
+	height: 232px;
+	margin-right: 60px;
+	margin-top: 0;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	line-height: 1.5em;
+	border: solid 1px var(--strgRed);
+	background-color: var(--backWhite);
+	overflow-x: hidden;
+}
+body#top main > section:nth-of-type(1) > ul > li {
+	/*border-bottom: 3.5px dotted rgba(114,61,49,0.2);*/
+	display: flex;
+	flex-direction: column;
+}
+body#top main > section:nth-of-type(1) > ul > li::after {
+	content: "......................................................................................................................";
+	letter-spacing: 2px; /* Use letter-spacing to increase space between dots*/
+	line-height: 0.5rem;
+	color: rgba(185,105,75,0.4);
+	margin-left: -20%;
+}
+body#top main > section:nth-of-type(1) > ul > li:last-child::after {
+	content: "";
+}
+body#top main > section:nth-of-type(1) > ul > li > time {
+	color: var(--strgRed);
+	font-weight: bold;
+	margin-top: 0.5rem;
+	letter-spacing: 0.05rem;
+}
+body#top main > section:nth-of-type(1) > ul > li > a {
+	cursor: pointer;
+	line-height: 1.5rem;
+	margin-bottom: 0.5rem
+}
+body#top main > section:nth-of-type(1) > ul > li > a:hover, body#top main > section:nth-of-type(1) > ul > li > a:focus {
+	color: var(--textBlack);
+}
+body#top main > section:nth-of-type(1) > div:last-child {
+	width: 244px;
+}
+body#top main > section:nth-of-type(1) > div:last-child > p {
+	margin-top: 1em;
+	font-size: 12px;
+	line-height: 2em;
+}
+body#top main > section:nth-of-type(1) > div:last-child > a > img {
+	width: 244px;
+	height: 165px;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+	cursor: pointer;
+}
+#newsDisplay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.5);
+}
+#newsDisplay > div {
+	width: calc(var(--baseMainWidth) - 100px);
+	max-height: 80%;
+	padding: 4em;
+	overflow: scroll;
+	background-color: var(--backWhite);
+	overflow-x: hidden;
+}
+#newsDisplay > div > h3 {
+	font-weight: normal;
+	margin: 0 0 40px 0;
+	font-size: 24px;
+}
+#newsDisplay > div > h3::after {
+	content: "..........................................................................................................................................................................................................................................................................................................";
+	display: block;
+	width: 100%;
+	letter-spacing: 2px; /* Use letter-spacing to increase space between dots*/
+	line-height: 1.5rem;
+	color: rgba(185,105,75,0.4);
+	margin-left: -20%;
+}
+#newsDisplay > div > p:nth-of-type(1) {
+	color: var(--textRed);
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0;
+}
+#newsDisplay > div img {
+	width: 396px;
+	height: auto;
+}
+#newsDisplay #closeBtn1 {
+	margin-top: 80px;
+	margin-bottom: 64px;
+}
+#newsDisplay #closeBtn2 {
+	position: fixed;
+	top: 7%;
+ left: calc(50% + (var(--baseMainWidth) - 100px) / 2);
+	cursor: pointer;
+	color: var(--textWhite);
+	font-size: 3em;
+	font-weight: bold;
+	text-decoration: none;
+}
+/* About */
+body#top main > section:nth-of-type(2) > div {
+	margin-bottom: 1.8rem;
+}
+body#top main > section:nth-of-type(2) > div > div > p:nth-of-type(-n+2) {
+	margin-bottom: 0em;
+}
+body#top main > section:nth-of-type(2) > div > div > p:nth-of-type(n+2) {
+	margin-top: 1em;
+}
+/* Special */
+body#top main > section:nth-of-type(3) > div > p {
+	margin-top: 0;
+	text-align: left;
+	margin-left: 12em;
+}
+body#top main > section:nth-of-type(3) > div > p:first-child {
+	position: absolute;
+	transform: translate(0%, -35%);
+	margin: 0;
+	font-size: 5.5em;
+	font-weight: bold;
+	color: var(--strgRed);
+	font-family: "Times New Roman", Times, "serif";
+	letter-spacing: -0.2rem;
+	width: 150px;
+	text-align: center;
+}
+body#top main > section:nth-of-type(3) > div > p:nth-of-type(2) {
+	position: absolute;
+	transform: translate(0%, 120%);
+	margin: 0;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: var(--strgRed);
+	font-family: "Times New Roman", Times, "serif";
+	width: 150px;
+	text-align: center;
+}
+body#top main > section:nth-of-type(3) > div > div {
+	display: flex;
+	margin-top: 3.5rem;
+}
+body#top main > section:nth-of-type(3) > div > div > article {
+	margin-right: min(6vw, 60px);
+	position: relative;
+}
+body#top main > section:nth-of-type(3) > div > div > article > img {
+ width: min((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2, 396px);
+ height: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2) * 300 / 396, 300px);
+	object-fit: cover;
+}
+body#top main > section:nth-of-type(3) > div > div > article > h3 {
+	margin: 20px 0 5px 0;
+}
+body#top main > section:nth-of-type(3) > div > div > article > p {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
+	color: var(--strgRed);
+}
+body#top main > section:nth-of-type(3) > div > div > article:first-of-type > img:last-of-type {
+	position: absolute;
+ width: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2) * 165 / 396, 165px);
+ height: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2) * 165 / 396, 165px);
+	border-radius: 50%;
+ top: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2) * 10 / 396, 10px);
+ left: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2) * 10 / 396, 10px);
+	z-index: 1;
+	border: none;
+	object-fit: cover;
+}
+/* menu */
+body#top main > section:nth-of-type(4) > div > div {
+	display: flex;
+}
+body#top main > section:nth-of-type(4) > div p {
+	margin-top: 0;
+	text-align: center;
+}
+body#top main > section:nth-of-type(4) > div > div > p > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body#top main > section:nth-of-type(4) > div > div > p > a > span {
+	position: absolute;
+	z-index: 1;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--textWhite);
+	text-shadow: 0 0 5px rgb(0,0,0);
+}
+body#top main > section:nth-of-type(4) > div > div > p > a > span > span {
+	font-size: 1rem;
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(1)> p > a > img {
+ width: min((96vw - (6.5vw + 6.5vw + 3vw + 1rem)) / 2, 411px);
+ height: min(((96vw - (6.5vw + 6.5vw + 3vw + 1rem)) / 2) * 200 / 411, 200px);
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(2)> p > a > img {
+ width: min((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 3, 264px);
+ height: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 3) * 200 / 264, 200px);
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(1)> p:first-of-type {
+	margin-right: min(3vw, 30px);
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(2)> p:nth-of-type(-n+2) {
+	margin-right: min(3vw, 30px);
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(2)> p {
+	margin-bottom: 1rem;
+}
+/*body#top main > section:nth-of-type(4) > div > div > p:hover > a::before {
+	content: "";
+	z-index: 1;
+	position: absolute;
+ width: min((96vw - (6.5vw + 6.5vw + 3vw + 1rem)) / 2, 411px);
+ height: min(((96vw - (6.5vw + 6.5vw + 3vw + 1rem)) / 2) * 200 / 411, 200px);
+	transform: translateX(0);
+	background-color: rgba(0,0,0,0.25);
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(2) > p:hover > a::before {
+ width: min((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 3, 264px);
+ height: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 3) * 200 / 264, 200px);
+}*/
+body#top main > section:nth-of-type(4) > div > div > p > a::before {
+	content: "";
+	z-index: 1;
+	position: absolute;
+ width: min((96vw - (6.5vw + 6.5vw + 3vw + 1rem)) / 2, 411px);
+ height: min(((96vw - (6.5vw + 6.5vw + 3vw + 1rem)) / 2) * 200 / 411, 200px);
+	transform: translateX(0);
+	background-color: rgba(0,0,0,0.25);
+	transition-duration: 0.4s;
+	opacity: 0;
+}
+body#top main > section:nth-of-type(4) > div > div:nth-of-type(2) > p > a::before {
+ width: min((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 3, 264px);
+ height: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 3) * 200 / 264, 200px);
+}
+body#top main > section:nth-of-type(4) > div > div > p:hover > a::before, body#top main > section:nth-of-type(4) > div > div > p:focus > a::before {
+	opacity: 1;
+}
+/* shop */
+body#top main > section:nth-of-type(5) > div p {
+	margin-top: 0;
+	text-align: center;
+}
+body#top main > section:nth-of-type(5) > div > div {
+	display: flex;
+	justify-content: space-between;
+}
+body#top main > section:nth-of-type(5) > div > div > img {
+ width: min((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2, 396px);
+ height: min(((96vw - (6.5vw + 6.5vw + 6vw + 1rem)) / 2) * 300 / 396, 300px);
+}
+body#top main > section:nth-of-type(5) > div > div > img:first-child {
+	margin-right: min(6vw, 60px);
+}
+body#top main > section:nth-of-type(5) > div > p:last-of-type {
+	margin: 1em 0 1.8em 0;
+	font-size: 15px;
+}
+/* access */
+body#top main > section:nth-of-type(6) > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: row wrap;
+}
+body#top main > section:nth-of-type(6) > div > dl {
+	width: 40%;
+	line-height: 1.8em;
+}
+body#top main > section:nth-of-type(6) > div > dl > dt {
+	width: 5em;
+}
+body#top main > section:nth-of-type(6) > div > dl > dd {
+	padding-left: 5em;
+}
+body#top main > section:nth-of-type(6) > div > p {
+	width: 55%;
+	margin-bottom: 0;
+}
+body#top main > section:nth-of-type(6) > div > p > img {
+	width: 100%;
+}
+/* --about--------------------------------------------------------------- */
+body#about h2 {
+	margin-top: 1rem;
+}
+body#about section > div:nth-of-type(odd) {
+	margin-bottom: 2rem;
+}
+body#about section > div:nth-of-type(odd) {
+	margin-bottom: 2rem;
+}
+body#about section > div > div {
+	align-content: flex-start;
+}
+body#about section > div > div > p:nth-of-type(1) {
+	margin-bottom: 0;
+}
+body#about section > div > div > p:nth-of-type(2) {
+	margin-top: 1em;
+}
+body#about section > div > div > p a {
+	color: var(--textRed);
+}
+/* --special------------------------------------------------------------- */
+/* CSS Document */
+#manth {
+	position: relative;
+}
+#special > main > section > div:last-child {/*今月ボタン領域div*/
+	width: 180px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#manth h2 {/*今月の月表示*/
+	position: absolute;
+	margin-top: -75px;
+	left: -55px;
+	top: 70px;
+	font-size: 140px;
+	font-family: "Times New Roman", Times, "serif";
+	letter-spacing: -0.5rem;
+	height: 220px;
+	width: 220px;
+	text-align: center;
+}
+#manth > section > section img { /*ない場合の画像*/
+	height: 300px;
+	width: 396px;
+	object-fit: cover;
+	border: none;
+}
+#manth > section > section {
+	display: flex;
+	height: 400px;
+	justify-content: space-between;
+	align-items: center;
+}
+#special > main > section > section:first-of-type > p:last-of-type {/*カレンダー文字列*/
+	position: absolute;
+	top: 30px;
+	left: -48px;
+	width: 220px;
+	justify-content: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: var(--textRed);
+	font-family: "Times New Roman", Times, "serif";
+}
+#manth h3 {/*今月のコーヒーケーキ商品名*/
+	color: var(--textRed);
+	text-align: center;
+	font-size: 1.5em;
+	font-style: italic;
+	width: 100%;
+	height: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#manth > p {/*今月のコーヒー＆ケーキ説明欄*/
+	display: flex;
+	align-items: center;
+	text-align: left;
+	width: 660px;
+	height: 200px;
+	padding-top: 50px;
+	margin-left: auto;
+}
+#manth > img { /*カレンダー画像*/
+	height: 220px;
+	width: 220px;
+	position: absolute;
+	left: -50px;
+	top: 0px;
+	z-index: -1;
+}
+#manth > div::after {/*＆の文字追加*/
+	content: "&";
+	font-family: "Times New Roman", Times, "serif";
+	font-size: 80px;
+	opacity: 0.3;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+	position: absolute;
+	left: 468px;
+	top: 417px;
+}
+#manth > div > div:last-of-type div {/*ケーキ説明BOX*/
+	left: 460px;
+}
+#manth > div > div > div, #manth > div > div > p img {/*空間設定*/
+	height: 300px;
+	width: 396px;
+	display: flex;
+	flex-wrap: wrap;
+}
+#manth > div > div > p img {/*画像の大きさ*/
+	object-fit: cover;
+	z-index: 0;
+}
+#manth > div > div:first-child > img:first-of-type {/*コーヒーカップ基盤画像*/
+	height: 300px;
+	width: 396px;
+	border: none;
+}
+#manth > div > div p:first-of-type {/*ケーキ文章、コーヒー文章*/
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+#manth > div > div p:nth-of-type(n+2) { /*ケーキ値段、コーヒー値段、コーヒーパラメータ*/
+	text-align: right;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	font-weight: bold;
+}
+#manth > div > div p:nth-of-type(2) { /*ケーキ値段、コーヒー値段*/
+	font-size: 1.2em;
+	color: var(--textRed);
+}
+#manth > div > div p:nth-of-type(n+3) {/*コーヒーパラメータ*/
+	text-align: left;
+	width: 198px;
+	height: 20px;
+	margin: 0px;
+}
+#manth > div > div:nth-of-type(1) {  /*コーヒー欄div*/
+	margin-bottom: 85px;
+}
+#manth > div > div:nth-of-type(2) {  /*ケーキ欄div*/
+	margin-bottom: 0px;
+}
+#manth > div > div:nth-of-type(1) > div img {   /*コーヒーのパラメーター画像*/
+	height: 1rem;
+	width: auto;
+}
+#manth > div > div img:nth-of-type(2) {  /*コーヒー豆画像*/
+	position: absolute;
+	width: 165px;
+	height: 165px;
+	border-radius: 50%;
+	right: 222px;
+	top: 19px;
+	z-index: 1;
+	border: none;
+	object-fit: cover;
+}
+#special .whiteboard h2 {/**/
+	margin-top: 0px;
+	text-align: center;
+	font-size: 1.2em;
+}
+.slide-area {
+	margin-left: 2.2em;
+}
+#special main ul {/*バックナンバーリスト*/
+	display: flex;
+	justify-content: flex-start;
+	list-style: none;
+	height: 212px;
+	overflow: hidden;
+}
+#special main > section > section > ul:nth-of-type(1) li {  /*バックナンバーリスト*/
+	height: 212px;
+	width: 220px;
+	margin-right: 60px;
+	text-align: center;
+}
+#special main ul li img {/*バックナンバーリスト画像*/
+	height: 180px;
+	width: 220px;
+	object-fit: cover;/*border: 8px solid rgba(185,105,75,0.2);*/
+}
+#special main ul li img:hover, #special main ul li img:focus {/*バックナンバーリスト画像ホバー時*/
+	/*border: 8px solid rgb(185,105,75,0.9);*/
+	opacity: 0.4;
+	transition: .1s;
+}
+/*********** スライド送りボタン ***********/
+/* 共有パーツ */
+#special main .whiteboard {
+	position: relative;
+}
+button {/*ボタン初期化*/
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	vertical-align: middle;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border-radius: 0;
+}
+.btnBack:hover, .js-btn-back:focus {
+	border-top: 25px solid transparent;
+	border-right: 25px solid rgba(185,105,75,0.2);
+	border-bottom: 25px solid transparent;
+	transition: .5s;
+}
+.btnNext:hover, .js-btn-next:focus {
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	border-left: 25px solid rgba(185,105,75,0.2);
+	transition: .5s;
+}
+#special > main > section > section:nth-of-type(2) p {
+	position: absolute;
+}
+/* 左ボタン */
+#special > main > section > section:nth-of-type(2) p:nth-of-type(1) {
+	top: 170px;
+}
+.btnBack {
+	display: none;
+	border-top: 25px solid transparent;
+	border-right: 25px solid var(--strgRed);
+	border-bottom: 25px solid transparent;
+}
+/* 右ボタン */
+#special > main > section > section:nth-of-type(2) p:nth-of-type(2) {
+	right: 64px;
+	top: 170px;
+}
+.btnNext {
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	border-left: 25px solid var(--strgRed);
+}
+/*リストのちっちゃい●*/
+#special > main > section > section > div > ul {
+	position: absolute;
+	left: 360px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 2.5rem;
+	width: 280px;
+}
+#special > main > section > section > div > ul li {
+	cursor: pointer;
+	content: "";
+	height: 1.2rem;
+	width: 1.2rem;
+	background-color: var(--strgRed);/*rgba(185,105,75,0.2);*/
+	border: solid 1px var(--strgRed);
+	border-radius: 50%;
+	transition: .7s;
+}
+#special > main > section > section > div > ul > li:focus, #special > main > section > section > div > ul > li:hover {
+	background-color: rgba(185,105,75,0.2) !important;
+}
+#special > main > section > section > div > ul li:nth-of-type(1) {
+	background-color: rgba(185,105,75,0.2);
+	height: 1.7rem;
+	width: 1.7rem;
+}
+#special > main .btn01 {
+	padding: 0;
+}
+#special > main a:hover, #special > main a:focus {
+	text-decoration: none;
+}
+/* --menu---------------------------------------------------------------- */
+/* プログラミング部分 */
+#morning, #lunch, #drink, #food, #desert {
+	display: none;
+}
+/* ボタンと画像連動 */
+#menu > main > section {
+	display: grid;
+	grid-template-columns: 1fr 640px;
+	grid-template-areas: "a1 a1" "b c" "d d";
+	column-gap: 30px;
+	align-content: start;
+}
+#menu > main > section >h1 {
+	grid-area: a1;
+}
+#menu > main > section >ul {
+	grid-area: b;
+}
+#menu > main > section >img {
+	grid-area: c;
+}
+#menu > main > section > .whiteboard {
+	grid-area: d;
+}
+#menu > main > section > input, #menu > main > section > img {
+	display: none;
+}
+#menu > main > section > input {
+	display: none;
+}
+#menu > main > section > input:checked + img {
+	display: block;
+	animation : fadein_menu 1.5s linear 1;/*山口追記*/
+}
+#menu > main > section > #r1:checked ~ .whiteboard > #morning, #menu > main > section > #r2:checked ~ .whiteboard > #lunch, #menu > main > section > #r3:checked ~ .whiteboard > #drink, #menu > main > section > #r4:checked ~ .whiteboard > #food, #menu > main > section > #r5:checked ~ .whiteboard > #desert {
+	display: flex;
+	column-gap: 60px;/*row-gap:60px;*/
+	animation : fadein_menu 1.5s linear 1;/*山口追記*/
+}
+/*山口追記*/
+@keyframes fadein_menu {
+ 0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}
+/* ボタン関係 */
+#menu > main > section >ul {
+	list-style: none;
+	margin: 0px;
+}
+#menu > main > section >ul>li {
+	margin: 0px;
+}
+#menu > main > section >ul>li>label {
+	background-color: rgb(185,105,75);
+	color: rgb(255,255,255);
+	width: 100%;
+	height: 51px;
+	text-align: center;
+	justify-content: center;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border: solid 1px rgb(185,105,75);
+}
+#menu > main > section >ul>li>label:hover {
+	color: rgb(185,105,75);
+	background-color: rgb(255,255,255);
+	transition: all 0.2s linear 0s;/*山口追記*/
+}
+#menu > main > section >ul>li:not(:last-child)>label {
+	margin-bottom: 30px;
+}
+#menu > main > section > img {
+	width: 640px;
+	height: auto;
+	border: solid 13px rgb(255,255,255);
+}
+/* メニュー部分 */
+
+body#menu .whiteboard > section > article > h3 {
+	font-weight: normal;
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+body#menu .whiteboard > section > article > h3 > span {
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(185,105,75);
+}
+body#menu .whiteboard > section {/*山口追記*/
+	/*display: flex;*/	/*山口追記*/
+	flex-flow: row wrap;
+}
+body#menu .whiteboard>section>h2, .whiteboard>section>p {
+	margin: 0px;
+	text-align: center;
+	width: 100%;
+}
+body#menu .whiteboard>section>h2>span {
+	font-size: 1.2rem;
+}
+body#menu .whiteboard>section>h2 {/*山口追記*/
+	margin-bottom: 0.5rem;
+}
+body#menu .whiteboard>section > article {
+	margin-top: 60px;
+}
+body#menu .whiteboard>section > article p {/*山口追記*/
+	font-size: 0.9em;
+	margin-bottom: 0px;
+	margin-top: 0.8em;
+	letter-spacing: 0.05px;
+	line-height: 1.5em;
+}
+body#menu .whiteboard>section>p > b {/*山口追記*/
+	font-size: 21px;
+	height: 1.5em;
+	color: rgb(114,61,49);
+	display: flex;
+	align-items: center;
+	margin-top: 80px;
+	margin-right: 1em;
+	margin-left: 1em;
+}
+body#menu .whiteboard>section>p > b:before {/*山口追記*/
+	content: "";
+	height: 1px;
+	flex-grow: 1;
+	background-color: var(--textBrown);
+	margin-right: 0.8em;
+}
+body#menu .whiteboard>section>p > b:after {/*山口追記*/
+	content: "";
+	height: 1px;
+	flex-grow: 1;
+	background-color: var(--textBrown);
+	margin-left: 0.8em;
+}
+body#menu .whiteboard>section#drink > p:nth-of-type(2) > b {/*山口追記*/
+	margin-top: 60px;
+}
+body#menu .whiteboard > section > p:first-of-type {/*山口追記*/
+	color: var(--textRed);
+}
+#menu .whiteboard > section > article {
+	/*width: 220px;*/
+	width: calc((100% - 120px) / 3 );
+}
+#menu .whiteboard > section > article>img {
+	width: 100%;
+	height: auto;
+}
+#menu .whiteboard > section > article.ordercake {
+	width: 100%;
+}
+body#menu .whiteboard >section> article div {
+	display: flex;
+	flex-flow: row wrap;
+	column-gap: 60px;
+}
+#menu .whiteboard > section > article.ordercake ul {
+	font-size: 0.9rem;
+	text-align: left;
+	margin-left: 260px;
+	margin-top: 1.5em;
+	padding-left: 1rem;
+}
+#menu .whiteboard > section > article.ordercake h3 {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-weight: bold;
+}
+#menu .whiteboard > section > article.ordercake p {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+#menu .whiteboard > section a {
+	color: var(--textRed);
+}
+/* --coupon---------------------------------------------------------------- */
+body#coupon section >h2 {
+	margin-top: 0;
+}
+body#coupon section > img:first-of-type {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 844px;
+}
+body#coupon section > img:nth-of-type(2) {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 380px;
+	height: auto;
+}
+/* --shop-------------------------------------------------------------- */
+/* h2,h3初期化 em強調 ul●をインサイドに*/
+body#shop {
+ --current:80vw;
+ --default:1280;
+ --bw:1280px;
+ --bw2:1280px;
+ --menu:1;
+}
+body#shop h2 {
+	margin: 0px;
+margin-bottom: calc(20/ 1280 * var(--bw));
+}
+body#shop h3 {
+	width: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}
+body#shop strong {
+	color: var(--textRed);
+	font-style: normal;
+}
+body#shop section>section ul {
+	line-height: 1.7em;
+}
+/* カフェフォレストのコーヒー豆販売レイアウト */
+body#shop section:first-child>section>div>div>h2 {
+ margin-top: calc(20 / 1280 * var(--bw));
+}
+/* 店頭販売・通信販売レイアウト */
+body#shop main>section>section:nth-of-type(2)>div {
+	margin-bottom: 0px;
+ width: calc(390 / 1280 * var(--bw));
+ margin-right: calc(60 / 1280 * var(--bw));
+}
+body#shop main>section>section:nth-of-type(2)>div:nth-of-type(2) {
+ margin-right: calc(0 / 1280 * var(--bw));
+}
+body#shop section>section:nth-of-type(2) {
+	display: flex;
+	justify-content: center;
+}
+body#shop .whiteboard>section>P {
+	margin-top: 0px;
+}
+/* お好みの方法をお選びくださいの部分のレイアウト */
+body#shop section>section:nth-of-type(3) {
+	border: solid 1px var(--textRed);
+ padding: calc(64 / 1280 * var(--bw));
+ width: calc(980 / 1280 * var(--bw));
+ margin:calc(80 / 1280 * var(--bw)) calc((880 / 1280 * var(--bw) - 980 / 1280 * var(--bw)) / 2);
+}
+body#shop section > section:nth-of-type(3) ul {
+	margin-left: 16px;
+}
+body#shop section>section:nth-of-type(3)>h2, body#shop section>section:nth-of-type(4)>h2 {
+ padding-bottom: calc(64 / 1280 * var(--bw));
+	margin-bottom: 0px;
+	text-align: center;
+}
+/* 挽き方の画像のマージン */
+body#shop section>section:nth-of-type(3)>section:nth-of-type(2)>div>img {
+ margin-left: calc(60/ 1280 * var(--bw));
+}
+body#shop section>section:nth-of-type(3)>ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	margin: 0px;
+ margin-left: calc(150 / 1280 * var(--bw));
+}
+/* 焙煎イメージ */
+body#shop section>section:nth-of-type(3)>img {
+	margin-top: 0px;
+ width: calc(880 / 1280 * var(--bw));
+}
+body#shop section>section:nth-of-type(3)>.parallel img {
+ width: calc(366 / 1280 * var(--bw));
+	height: auto;
+	border: none;
+ margin-right: calc(40 / 1280 * var(--bw));
+}
+body#shop section > section:nth-of-type(3) > .parallel:nth-of-type(2) img {
+	margin-right: 0px;
+}
+body#shop section>section:nth-of-type(3)>.parallel:first-of-type img {
+ margin-bottom: calc(100 / 1280 * var(--bw));
+}
+body#shop section>section:nth-of-type(3)>.parallel:first-of-type>div {
+	margin-bottom: 10px;
+}
+/*whotebord コーヒーの種類部分のレイアウト~ */
+
+body#shop .whiteboard>section:first-of-type>article > div > div > p:first-of-type {
+	color: var(--textRed);
+	font-weight: bold;
+}
+body#shop .whiteboard {
+	position: relative;
+ margin-top: calc(80 / 1280 * var(--bw));
+}
+body#shop .whiteboard>section:first-of-type>article>div>img {
+ width: calc(400/ 1280 * var(--bw));
+	height: auto;
+	overflow: hidden;
+}
+body#shop .whiteboard>section:first-of-type>article>div>div {
+ width: calc(380/ 1280 * var(--bw));
+}
+body#shop .whiteboard>section:first-of-type>article {
+ width: calc(780 / 1280 * var(--bw));
+	justify-content: center;
+	display: flex;
+	margin-right: 0px;
+}
+body#shop .whiteboard>section article p {
+	font-size: 16px;
+	margin-bottom: 0px;
+	/* margin-top: 12.8px; */
+	letter-spacing: 0.05px;
+	line-height: 1.5rem;
+}
+body#shop .whiteboard h2 {
+	font-size: 21px;
+	height: 21px;
+	color: rgb(114,61,49);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 80px;
+	margin-right: 16px;
+	margin-bottom: 16px;
+}
+body#shop .whiteboard h2:before {
+	content: "";
+	height: 1px;
+	flex-grow: 1;
+	background-color: var(--textBrown);
+	margin-right: 12.8px;
+}
+body#shop .whiteboard h2:after {
+	content: "";
+	height: 1px;
+	flex-grow: 1;
+	background-color: var(--textBrown);
+	margin-left: 12.8px;
+}
+/* body#shop .whiteboard>section>p:first-of-type{
+	position: absolute;
+	top: 8px;
+	left: -250px;
+	opacity: 0.6;
+} */
+body#shop .whiteboard>section:first-child {
+	justify-content: center;
+}
+body#shop div>section>p {
+	width: 96vw;
+}
+body#shop article>h3 {
+ margin-top: calc(20 / 1280 * var(--bw));
+	margin-bottom: 0px;
+	font-size: 18px;
+}
+body#shop article>p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 16px;
+}
+body#shop .whiteboard>section>h2 {
+ margin-top: calc(70 / 1280 * var(--bw));
+	margin-bottom: 0px;
+}
+body#shop .whiteboard>section:first-of-type>h2 {
+	margin-top: 0px;
+}
+body#shop .whiteboard>section>article>p:first-of-type {
+	margin-top: 0px;
+	margin-bottom: 4px;
+	color: var(--textRed);
+	font-weight: bold;
+}
+body#shop .whiteboard>section>h2, body#shop .whiteboard>section>p {
+	text-align: center;
+}
+body#shop .whiteboard>section>p {
+	margin-bottom: 20px;
+}
+body#shop article>img, article>div>img {
+ width:calc(170 / 1280 * var(--bw)*var(--menu));
+ height: calc(170 / 1280 * var(--bw)*var(--menu));
+ margin-right: calc(30 / 1280 * var(--bw));
+	overflow: hidden;
+}
+body#shop article>div>div>ul {
+ padding-top: calc(10 / 1280 * var(--bw));
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+}
+body#shop article>div>div>p {
+ margin-top: calc(10 / 1280 * var(--bw));
+	margin-bottom: 0px;
+}
+body#shop ul>li>img {
+	width: 16px;
+ margin-left: calc(3 / 1280 * var(--bw));
+}
+body#shop section>article {
+ width: calc(396 / 1280 * var(--bw)*var(--menu));
+	height: auto;
+ margin-top: calc(60 / 1280 * var(--bw)*var(--menu));
+}
+body#shop section>article:nth-of-type(odd) {
+	margin-left: 0px;
+ margin-right: calc(60 / 1280 * var(--bw));
+}
+body#shop section>article:nth-of-type(even) {
+	margin-right: 0px;
+}
+body#shop article>div>div>ul>li {
+	list-style-type: none;
+}
+body#shop article>div {
+	display: flex;
+}
+body#shop div>section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+body#shop div>section>h2 {
+	width: 100%;
+}
+/* テーブル関係 */
+body#shop table ul {
+	margin-left: 1rem;
+}
+body#shop section>section:nth-of-type(4)>h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+body#shop table, body#shop tr, body#shop td, body#shop th {
+	border: 2px solid var(--textRed);
+	border-collapse: collapse;
+	line-height: 2em;
+	padding: 8px;
+}
+body#shop th {
+ width: calc(150 / 1280 * var(--bw));
+}
+body#shop td>a {
+	color: var(--textRed);
+}
+body#shop i {
+	font-size: 24px;
+}
+/* --access-------------------------------------------------------------- */
+/* access.css */
+body#access > main > section {
+	width: 880px;
+	height: auto;
+	display: grid;
+	gap: 60px;
+	grid-template-columns: 280px 540px;
+	grid-template-rows: auto 500px auto;
+	grid-template-areas: "header01 header01" "box01 box02" "box03 box03";
+}
+body#access > main > section h1 {
+	grid-area: header01;
+	margin-bottom: 0;
+}
+body#access > main > section figure:first-of-type {
+	grid-area: box01;
+}
+body#access > main > section figure > img:first-child {
+	margin-bottom: 24px;
+}
+body#access > main > section dl {
+	grid-area: box02;
+	padding-top: 10px;
+	padding-left: 30px;
+	font-size: 1.1em;
+	line-height: 1.8em;
+	background-color: rgba(192,192,192,0.0);
+}
+body#access > main > section figure:last-child {		/* 地図画像エリア */
+	grid-area: box03;
+	width: 980px;
+	height: 660px;
+	margin-left: -50px;
+	padding-top: 64px;
+	padding-left: 64px;
+	box-shadow: 0px 3px 10px 5px rgba(0,0,0,0.2);
+	background-color: rgba(255,255,255,1);
+}
+body#access > main > section dl > dd {
+	padding-left: 180px;
+}
+body#access > main > section figure:first-of-type > img {	/* 喫茶店写真、2枚 */
+	width: 280px;			/* imgを縦横比固定で幅280pxに縮小 枠線含む */
+	border: 10px solid rgb(255,255,255);
+}
+/* @@@@@@@@@@@ img effect ↓↓↓↓↓↓　start @@@@@@@@@@@ ↓↓↓↓↓↓ */
+body#access > main > section figure:first-of-type > img:first-of-type {/* 店舗外観画像 effect */
+	animation: fadeIn 1s linear;
+	animation-fill-mode: both;
+}
+@keyframes fadeIn {
+ 0% {
+ opacity: 0.0;
+}
+ 35% {
+ opacity: 0.8;
+ box-shadow:9px 9px 9px rgba(0,0,0,0.1);
+}
+ 70% {
+ opacity: 0.9;
+ box-shadow:7px 7px 7px rgba(0,0,0,0.1);
+}
+ 100% {
+ opacity: 1;
+ box-shadow:0px 0px 0px rgba(0,0,0,0);
+}
+}
+body#access > main > section figure:first-of-type > img:nth-of-type(2) {/* 店内画像 effect */
+	animation: fadeIn 2s linear;
+	animation-fill-mode: both;
+}
+@keyframes fadeIn {
+ 0% {
+ opacity: 0.0;
+}
+ 30% {
+ opacity: 0.2;
+ box-shadow:9px 9px 9px rgba(0,0,0,0.1);
+}
+ 70% {
+ opacity: 0.6;
+ box-shadow:7px 7px 7px rgba(0,0,0,0.1);
+}
+ 100% {
+ opacity: 1;
+ box-shadow:0px 0px 0px rgba(0,0,0,0);
+}
+}
+body#access > main > section figure:last-of-type > img { /*地図画像 effect */
+	animation: fade 2s linear;
+	animation-fill-mode: both;
+}
+@keyframes fade {
+ 0% {
+ opacity: 0.1;
+}
+ 100% {
+ opacity: 1;
+}
+}
+/* --contact-------------------------------------------------------------- */
+#contact main h2, #confirm main h2, #finish main h2 {
+	border-bottom: 2px solid var(--textRed);
+	width: 100%;
+}
+#contact main section>ul, #confirm main section>ul, #finish main section>ul {
+	list-style-type: none;
+	display: flex;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	justify-content: space-around;
+}
+#contact main section>ul li, #confirm main section>ul li, #finish main section>ul li {
+	display: flex;
+	height: 30px;
+	width: calc(100% / 3);
+	color: black;
+	justify-content: center;
+	align-items: center;
+}
+#contact main section>ul li:nth-of-type(2) {
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid var(--strgBlue);
+}
+#contact main section>ul li:first-child {
+	background-color: var(--strgBlue);
+	color: white;
+}
+#confirm main section>ul li:nth-of-type(3) {
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid var(--strgBlue);
+}
+#confirm main section>ul li:not(:last-child) {
+	background-color: var(--strgBlue);
+	color: white;
+}
+#finish main section>ul li {
+	background-color: var(--strgBlue);
+	color: white;
+}
+#contact main textarea {
+	width: 880px;
+	height: 180px;
+	padding: 0.5rem;
+}
+#contact main section>input {
+	width: 880px;
+	height: 50px;
+	padding: 0.5rem;
+}
+.error_msg {
+	color: red;
+	font-weight: bold;
+}
+#confirm main section div:last-of-type {
+	display: flex;
+}
+#confirm main section a, #finish main a {
+	text-decoration: none;
+}
+#confirm main section .btn01, #finish main section .btn01 {
+	padding: 0;
+}
+#confirm main section a, #finish main section a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+#contact main > section:last-of-type p a {
+	color: var(--textRed);
+}
+*::placeholder {
+ color: rgb(160,160,160);
+}
+input:focus::placeholder, textarea:focus::placeholder {
+ color: transparent;
+}
+pre {
+	white-space: pre-wrap;
+}
+/* --transaction-------------------------------------------------------------- */
+body#transaction > main > section dl {
+	font-size: 1.0em;
+	line-height: 2.5em;
+	margin-bottom: 80px;
+}
+body#transaction > main > section dt {
+	list-style: none;
+}
+body#transaction > main > section dd {
+	margin-bottom: 0;
+	padding-left: 230px;
+	border-bottom: 3.5px dotted rgba(114,61,49,0.2);
+}
+body#transaction > main > section dd:nth-of-type(12) {
+	border-bottom: none;
+}
+body#transaction > main > section dd:last-child {
+	border-bottom: none;
+}
+body#transaction > main > section a {
+	color: var(--textRed);
+}
+/* --sitemap-------------------------------------------------------------- */
+/* sitemap.css  */
+body#sitemap main > section > ul {
+	font-size: 1.0em;
+	list-style: none;
+	margin-bottom: 80px;
+}
+body#sitemap main > section > ul > li {
+	line-height: 2.5em;
+	border-bottom: 3.5px dotted rgba(114,61,49,0.2);
+}
+body#sitemap main > section > ul > li > a {
+	padding-left: 340px;
+}
+body#sitemap main > section > ul >li:last-child {
+	border-bottom: none;
+}
+body#sitemap main > section > ul > li > a:hover {
+	color: rgb(185,105,75);
+	text-decoration: none;
+}
+body#sitemap main > section > ul > li > a:hover {
+	text-decoration: none;
+}
+body#sitemap main > section > ul > li > a:visited {
+	text-decoration: none;
+}
+
+/* --共通---------------------------------------------------------------- */
+/*メディアクエリ*/
+@media screen and (max-width: 1302px) {
+body#top main > div:first-of-type {
+	margin-top: 0;
+}
+}
+
+@media screen and (max-width: 1280px) {
+body#top main > div:first-of-type {
+	/*
+	width: calc(100vw - 16px);
+ 	height: calc(100vw * 7 / 16);
+	margin-left: calc((var(--baseMainWidth) - 100vw + 16px) / 2);
+	*/
+	width: 100vw;
+	height: calc(100vw * 7 / 16);
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+}
+
+@media screen and (max-width: 996px) {
+body#top main {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+body#top main .whiteboard {
+	width: 96vw;
+	margin-left: calc((var(--baseMainWidth) - 96vw - 1rem) / 2);
+	padding: max(10px, 6.5vw);
+}
+body#top main > div:first-of-type {
+/*margin-left: calc((var(--baseMainWidth) - 100vw) / 2);*/
+}
+body#top main > section:nth-of-type(1) > ul {
+	margin-left: auto;
+	margin-right: auto;
+}
+body#coupon main {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+body#coupon main .whiteboard {
+	width: 96vw;
+	margin-left: calc((var(--baseMainWidth) - 96vw - 1rem) / 2);
+	padding: max(10px, 6.5vw);
+}
+body#coupon main img:nth-of-type(1) {
+	width: 85vw;
+}
+body#shop div>section {
+	justify-content: center;
+}
+body#shop .parallel>div {
+	width: 80vw;
+}
+body#shop .whiteboard {
+ padding:calc(32 / 1280 * var(--bw));
+}
+body#shop .parallel>div>div, body#shop main>section>section:nth-of-type(2)>div, body#shop .parallel > div > img {
+ width: calc(410 / 1280 * var(--bw)*var(--menu));
+	height: auto;
+}
+body#shop main>section:first-of-type>section>div>div {
+	margin-right: 30px;
+}
+body#shop section> h1 {
+	width: 100%;
+}
+body#shop main {
+	width: 96vw;
+}
+body#shop .parallel>div {
+	justify-content: center;
+}
+/* 販売について */
+body#shop .parallel>div, body#shop .whiteboard {
+	width: 100%;
+}
+body#shop section>section:nth-of-type(3), body#shop .whiteboard {
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+body#shop .whiteboard>section:first-of-type>article>div>img {
+ height: calc(300/ 1280 * var(--bw));
+}
+body#shop section>article:nth-of-type(odd) {
+	margin-left: 40px;
+}
+body#shop section>article:nth-of-type(odd) {
+	margin-right: 40px;
+}
+body#shop {
+ --bw:96vw;
+ --menu:1.25;
+}
+body#contact main,  body#confirm main,  body#finish main {
+	width: calc(100vw - 116px);
+}
+body#contact main textarea,  body#contact main input {
+	width: calc(100vw - 116px);
+}
+}
+
+@media screen and (max-width: 896px) {
+body#top main {
+	/*width: 96vw;*/
+	width: 100%;
+}
+body#top main .whiteboard {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+body#top main > div:first-of-type {
+/*margin-left: -1rem;*/
+}
+body#top main > section:nth-of-type(2) > div {
+	flex-flow: row wrap;
+}
+body#top main > section:nth-of-type(2) > div img{
+	margin-right: auto;
+	margin-left: auto;
+	border:solid calc(100vw * 13 / 896) rgb(255,255,255);
+}
+body#top main > section:nth-of-type(3) > div > p:first-child {
+	transform: translate(0, 0);
+	position: static;
+	margin: 0;
+	text-align: center;
+	font-size: 5em;
+	line-height: 1em;
+	width: 100%;
+}
+body#top main > section:nth-of-type(3) > div > p:nth-of-type(2) {
+	transform: translate(0, 0);
+	position: static;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 1em;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+body#top main > section:nth-of-type(3) > div > p {
+	text-align: center;
+	margin-left: 0;
+}
+body#top main > section:nth-of-type(3) > div h3 {
+	font-size: 1em;
+}
+body#top main .parallel > div {
+	height: auto;
+}
+body#top main .parallel > div > div {
+	width: auto;
+	height: auto;
+	margin-right: 6vw;
+}
+body#top main .parallel > div > img {
+ width:calc(96vw * 410 / 880);
+ height:calc(96vw * 310 / 880);
+	border: solid min(13px, 3vw) rgb(255,255,255);
+}
+body#top main > section:nth-of-type(6) > div > dl {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+body#top main > section:nth-of-type(6) > div > p {
+	width: 100%;
+}
+body#about section > div {
+	display: block;
+}
+body#about section.pallarel {
+	margin: 0;
+}
+body#about section.pallarel > div, body#about section.pallarel > div > div {
+	margin: 0;
+}
+body#about section > div > div, body#about section > div > section {
+	width: 80vw;
+	margin-left: 0;
+}
+body#about section > h1 {
+	display: inline-block;
+	margin-left: calc((100vw - 226px) / 2);
+}
+body#about section div {
+	height: auto;
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+body#about section > div > img {
+	display: inline-block;
+	width: 410px;
+	height: auto;
+	margin-left: calc((80vw - 410px) / 2);
+}
+body#about section > div > img:nth-of-type(odd) {
+	margin-top: 1.8rem;
+}
+body#coupon main {
+	width: 96vw;
+}
+body#coupon main .whiteboard {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+}
+
+@media screen and (max-width: 768px) {
+body#top main > div:first-of-type > p {
+	line-height: max(2em, 6.25vw);
+	font-size: max(10px, 2.5vw)
+}
+body#top main .parallel > div {
+	flex-flow: row wrap;
+}
+body#top main .parallel > div img {
+	margin-left: auto;
+	margin-right: auto;
+}
+body#top main > section:nth-of-type(2) > div p br, body#top main > section:nth-of-type(3) > div p br, body#top main > section:nth-of-type(4) > div > p br, body#top main > section:nth-of-type(5) > div p br {
+	display: none;
+}
+body#shop main>section>section:nth-of-type(2)>div:nth-of-type(2) {
+	margin-right: auto;
+}
+body#shop main>section>section:first-of-type p {
+	text-align: left;
+}
+body#shop section > section:nth-of-type(3) ul {
+	margin-left: 0px;
+}
+body#shop section>section:nth-of-type(3)>img, body#shop .parallel>div>div, body#shop main>section>section:nth-of-type(2)>div {
+	width: 84vw;
+	margin: auto;
+}
+body#shop section > section:nth-of-type(3) ul {
+	padding-left: 0px;
+}
+body#shop section>section:nth-of-type(3)>.parallel img {
+	display: none;
+}
+body#shop section>article {
+	width: 84vw;
+}
+body#shop th, body#shop td {
+	display: block;
+	width: auto;
+	border: none;
+}
+body#shop th {
+	border-bottom: 2px solid var(--textRed);
+}
+body#shop ul {
+	text-align: justify;
+}
+body#shop .parallel:first-of-type, body#shop section>section:nth-of-type(3) {
+	width: 96vw;
+	padding: 0px;
+}
+body#shop .whiteboard>section:first-of-type>article {
+	width: 90vw;
+}
+body#shop .parallel>div {
+	height: auto;
+}
+body#shop .parallel>div, body#shop section>section:nth-of-type(2) {
+	display: block;
+	text-align: center;
+}
+body#shop article {
+	margin-left: auto;
+	width: 80vw;
+}
+body#shop article>div>div>p {
+	letter-spacing: 0px;
+}
+body#shop {
+ --menu:2;
+}
+body#shop section>article:nth-of-type(even) {
+	margin-right: 40px;
+	margin-left: 40px;
+}
+body#shop .whiteboard>section:first-of-type>article>div>div {
+ width: calc(700/ 1280 * var(--bw));
+}
+body#shop h3, body#shop .whiteboard > section:first-of-type > article > div > div > p:first-of-type, body#shop .whiteboard > section article p {
+	text-align: left;
+}
+}
+
+@media screen and (max-width: 570px) {
+body#top main > section:nth-of-type(4) > div > div > p > a > span, body#top main > section:nth-of-type(4) > div > div > p > a > span > span {
+	font-size: 0.8rem;
+}
+}
+
+@media screen and (max-width: 479px) {
+body#coupon main img:nth-of-type(1) {
+	display: none;
+}
+body#coupon main img:nth-of-type(2) {
+	display: block;
+	width: 95%;
+}
+body#coupon main .whiteboard {
+	margin-top: 10vw;
+}
+body#coupon main .whiteboard h2 {
+	font-size: 1rem;
+}
+body#coupon main .whiteboard h3 {
+	font-size: 0.9em;
+}
+body#coupon main .whiteboard ul {
+	font-size: 0.8em;
+}	
+}
+
+@media screen and (max-width: 436px) {
+body#about section > div > img {
+	width: 80vw;
+	margin-left: 0;
+}
+body#about section > div > img {
+ border:solid calc(100vw * 13 / 389) rgb(255,255,255);
+}
+}
+
+@media print {
+body#coupon header,  body#coupon footer,  body#coupon h1,  body#coupon a {
+	display: none;
+}
+body#coupon main {
+	width: 80%;
+}
+body#coupon img {
+	width: 100%;
+	height: auto;
+}
+body#coupon main .whiteboard {
+	visibility: hidden;
+}
+body#coupon main .whiteboard > section {
+	visibility: visible;
+}
+.scroll-fade {
+	opacity : 1.0;
+}
+}
